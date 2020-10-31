@@ -19,7 +19,7 @@ cr_header(htext, hlevel = 1, only = NULL, cr_dbl = NULL)
 markdown header conditionally
 }
 \description{
-Conditional headers
+\lifecycle{soft-deprecated}
 }
 \examples{
 \dontrun{

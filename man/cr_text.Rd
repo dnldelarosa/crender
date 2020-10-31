@@ -17,7 +17,7 @@ cr_text(text, only = NULL, cr_dbl = NULL)
 markdwon text
 }
 \description{
-Conditionally rendering text
+\lifecycle{soft-deprecated}
 }
 \examples{
 \dontrun{
