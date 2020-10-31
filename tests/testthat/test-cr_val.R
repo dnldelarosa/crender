@@ -1,0 +1,10 @@
+test_that("cr_val tests", {
+  assign('params', list('latex' = FALSE), envir = globalenv())
+  expect_equal(cr_val(), TRUE)
+  assign('params', list('html' = FALSE), envir = globalenv())
+  expect_equal(cr_val(), FALSE)
+  expect_equal(cr_val(only='html'), TRUE)
+  expect_equal(cr_val(cr2='html'), TRUE)
+  expect_equal(cr_val(only='latex'), FALSE)
+  expect_equal(cr_val(cr2='latex'), FALSE)
+})

@@ -4,19 +4,19 @@
 \alias{cr_val}
 \title{Conditional value}
 \usage{
-cr_val(only = NULL, cr_dbl = NULL)
+cr_val(only = NULL, cr2 = NULL)
 }
 \arguments{
 \item{only}{character default to \code{NULL}.
 If specified, only in the specified formats the result will be \code{TRUE}}
 
-\item{cr_dbl}{character default to \code{NULL}.
-If specified, the result for specified formats will be the oppositive
+\item{cr2}{character default to \code{NULL}.
+If specified, the result for specified formats will be the opposite
 to initial result.}
 }
 \value{
 logical default to \code{TRUE} if format not in \code{yaml-params}.
-Otherwise retur a logical value based on given function params.
+Otherwise return a logical value based on given function params.
 }
 \description{
 Conditional value

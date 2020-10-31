@@ -3,11 +3,11 @@
 #' @param only character default to \code{NULL}.
 #'   If specified, only in the specified formats the result will be \code{TRUE}
 #' @param cr2 character default to \code{NULL}.
-#'   If specified, the result for specified formats will be the oppositive
+#'   If specified, the result for specified formats will be the opposite
 #'   to initial result.
 #'
 #' @return logical default to \code{TRUE} if format not in \code{yaml-params}.
-#'   Otherwise retur a logical value based on given function params.
+#'   Otherwise return a logical value based on given function params.
 #'
 #' @export
 #'
