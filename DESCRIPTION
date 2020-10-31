@@ -17,5 +17,7 @@ Imports:
     lifecycle
 Suggests: 
     testthat,
-    withr
+    withr,
+    spelling
 RdMacros: lifecycle
+Language: en-US
