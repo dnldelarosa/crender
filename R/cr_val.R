@@ -1,5 +1,7 @@
 #' Conditional value
 #'
+#' \lifecycle{experimental}
+#'
 #' @param only character default to \code{NULL}.
 #'   If specified, only in the specified formats the result will be \code{TRUE}
 #' @param cr2 character default to \code{NULL}.

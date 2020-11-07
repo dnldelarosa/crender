@@ -21,10 +21,10 @@ Conditionally rendering content
 }
 \details{
 Content can be anything you can insert in an common RMarkdown document,
-except tha you can't insert \code{\`(backsticks)} and therefore chucks.
+except that you can't insert \code{\`(backsticks)} and therefore chucks.
 }
 \examples{
 \dontrun{
-`r cr_text('Text to be evaluate.')`
+`r cr_content('Text to be evaluate.')`
 }
 }

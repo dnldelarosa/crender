@@ -1,5 +1,7 @@
 #' Only render on this formats
 #'
+#' \lifecycle{experimental}
+#'
 #' @param only character a vector of character with the formats where the
 #'   content will be rendered.
 #'
