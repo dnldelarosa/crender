@@ -98,3 +98,6 @@ r cr_header('Imports', only = 'pptx')
 
 <!-- usar |&mean(df$x)| para insertar código a ser evaluado. o yo puedo hacer que internamente una funcion como cr_RCode(mean(df$x)) se traduzca en |&mean(df$x)| para luego operar sobre ello.-->
 
+<!-- Crear una función cr_eval() para evaluar el código R condicionalmente, y así nisiquiera evaluo el código cuando este no va a ser insertado en documento actual. Esto es algo similar a como funciona tryCatch incluso puede ser de este tipo que todo el código vaya dentro de ella o puedo hacer que funciones con %>% o mejor aún de ambas formas. En verdad resulta igual de peligroso que el argumento eval del chuck a menos que logre hacer algun tipo de dependencia que haga que el código se evalue solo si es necesario en cualquier parte del documento. -->
+
+<!-- Puedo utilizar esto para la evaluación dinámica. https://bookdown.org/yihui/rmarkdown-cookbook/load-cache.html -->
