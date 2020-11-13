@@ -55,28 +55,14 @@ stable version. These are some of the ideas that at the moment I plan to
 add to the package. Feel free to propose any change that you consider
 pertinent. Look at `Contributing` below to see how.
 
-1.  Add a function to insert conditional elements in the yaml <!-- 
-    Desarrollar esta función:
-    ---
-    author: "r crender::cr_toggle('Daniel E. de la Rosa', 'crender core team', only = NULL, cr_dbl = NULL)`"
-    
-    params:
-      html: TRUE
-      latex: FALSE
-      docx: FALSE
-    ---
-    
-    Esto hará que el autor sea Daniel en html y crender core team en los demás formatos.
-    Otra vez puedo utilizar los argumentos only y cr_dbl para controlar el resultado.
-    
-    Si hay más de dos opciones entonces utiliza la función cr_* que corresponda especificando los formatos necesarios en only.
-    
-    Ejemplo:
-    
-    r cr_header('Libraries', only = 'html')`
-    r cr_header('Packages', only = c('latex', 'docx'))`
-    r cr_header('Imports', only = 'pptx')
-    -->
+However, it is important to note that we do not want to modify the
+[knitr::knit()](https://rdrr.io/github/forks-micael/knitr/man/knit.html)
+or [Rmarkdown::render()](https://rdrr.io/cran/rmarkdown/man/render.html)
+functions unless the functionality in question is of great importance,
+to warrant the work that this implies.
+
+1.  Add a function to insert conditional elements in the yaml
+    <!-- Desarrollar esta función: author: "r crender::cr_toggle('Daniel E. de la Rosa', 'crender core team', only = NULL, cr_dbl = NULL)" -->
 2.  A function to insert tables in especific formats
     <!-- Falta la función cr_table -->
 3.  A knit function to control additional output aspects
