@@ -19,7 +19,7 @@ logical default to \code{TRUE} if format not in \code{yaml-params}.
 Otherwise return a logical value based on given function params.
 }
 \description{
-Conditional value
+\lifecycle{experimental}
 }
 \examples{
 \dontrun{

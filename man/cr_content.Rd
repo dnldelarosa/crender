@@ -17,7 +17,7 @@ cr_content(content, only = NULL, cr2 = NULL)
 markdwon content
 }
 \description{
-Conditionally rendering content
+\lifecycle{experimental}
 }
 \details{
 Content can be anything you can insert in an common RMarkdown document,

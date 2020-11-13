@@ -26,7 +26,7 @@ cr_val <- function(only = NULL, cr2 = NULL){
     if(!is.null(only)){
       cr_only(only)
     } else if(!is.null(cr2)){
-      cr_double(cr2)
+      cr_cr2(cr2)
     } else {
       params[[cr_format()]]
     }

@@ -14,7 +14,7 @@ content will be rendered.}
 logical TRUE if current format in given vector, FALSE otherwise.
 }
 \description{
-Only render on this formats
+\lifecycle{experimental}
 }
 \examples{
 \dontrun{

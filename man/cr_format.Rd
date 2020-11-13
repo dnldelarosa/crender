@@ -10,5 +10,5 @@ cr_format()
 character Return de current knitting format. \code{html} if interactive.
 }
 \description{
-Current knitting format
+\lifecycle{experimental}
 }
