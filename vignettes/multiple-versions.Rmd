@@ -1,8 +1,8 @@
 ---
-title: "crender"
+title: "Multiple versions"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{crender}
+  %\VignetteIndexEntry{Multiple versions}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

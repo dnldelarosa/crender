@@ -2,11 +2,12 @@ Package: crender
 Title: Conditional rendering for Rmarkdown
 Version: 0.6.9.9000
 Authors@R: 
-    person(given = "Daniel",
+    person(given = "Daniel E.",
            family = "de la Rosa",
            role = c("aut", "cre"),
            email = "drdsdaniel@gmail.com")
-Description: What the package does (one paragraph).
+Description: Allows the user to generate multiple documents with different 
+    content for each format used.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -18,7 +19,6 @@ Imports:
 Suggests: 
     testthat,
     withr,
-    spelling,
     covr,
     rmarkdown
 RdMacros: lifecycle
