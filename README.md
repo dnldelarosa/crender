@@ -4,7 +4,7 @@
 # crender: *C*onditional *render*ing for Rmarkdown <img src="man/figures/logo.png" align="right" width=120 height=139 alt="" />
 
 <!-- badges: start -->
-
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R build
 status](https://github.com/drdsdaniel/crender/workflows/R-CMD-check/badge.svg)](https://github.com/drdsdaniel/crender/actions)
 [![Travis build
