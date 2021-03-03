@@ -2,3 +2,4 @@
 
 export(cr_content)
 export(cr_val)
+importFrom(lifecycle,deprecate_soft)
