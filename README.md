@@ -4,15 +4,16 @@
 # crender: *C*onditional *render*ing for Rmarkdown <img src="man/figures/logo.png" align="right" width=120 height=139 alt="" />
 
 <!-- badges: start -->
-[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![R build
 status](https://github.com/drdsdaniel/crender/workflows/R-CMD-check/badge.svg)](https://github.com/drdsdaniel/crender/actions)
-[![Travis build
-status](https://travis-ci.com/drdsdaniel/crender.svg?branch=master)](https://travis-ci.com/drdsdaniel/crender)
-[![Codecov test
-coverage](https://codecov.io/gh/drdsdaniel/crender/branch/master/graph/badge.svg)](https://codecov.io/gh/drdsdaniel/crender?branch=master)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/drdsdaniel/crender/branch/main/graph/badge.svg)](https://codecov.io/gh/drdsdaniel/crender?branch=main)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/crender)](https://CRAN.R-project.org/package=crender)
 <!-- badges: end -->
@@ -36,21 +37,19 @@ The main objective of **crender** can be summarized as:
 <!-- You can install the released version of crender from [CRAN](https://CRAN.R-project.org) with: -->
 
 <!-- ``` r -->
-
 <!-- install.packages("crender") -->
-
 <!-- ``` -->
 
 You can install the development version from GitHub with:
 
 ``` r
 tryCatch(
-  library(devtools),
+  library(remotes),
   error = function(e){
-    install.packages('devtools')
+    install.packages('remotes')
   }
 )
-devtools::install_github("drdsdaniel/crender")
+remotes::install_github("drdsdaniel/crender")
 ```
 
 ## Roadmap
@@ -75,16 +74,17 @@ to warrant the work that this implies.
     <!-- La viñeta crender explica la mayoría de las funcionalidades con multiples formatos, referencia la viñeta de multiples versiones tanto como tal, como la opción de multilingual output. Una viñeta para las versiones con el mismo formato y en una seccón de esta sugerir la posibilidad de generar documento multilingue -->
 5.  Ability of generate multiple version with the same output format
     <!-- Si de verdad puedo poner múltiples rmarkdown::render dentro de la function knit, cual es el plan para rmd.polyglot, entonces tambien puedo hacer que crender cree distintas versiones de un mismo documento. Utilizando ver1...vern en lugar de lang1...langn. La idea básicamente es que pongo tantos lang(ver) en los párametros como idiomas(versiones) del mismo documento quiero. Entonces mientras pueda hacer que la funcion knit ejecute rmarkdown::render tantas veces como estos parámetros haya, intercalandolos 1 a 1, entonces puedo manipular los cr_val, incluso puedo combinar esto con los formatos de documentos, es decir que puedo tener distintas versiones en varios formatos con algunas diferencias en cada uno. En fin, los formatos tienen sentido porque puedo hacer una presentación por ejemplo al mismo tiempo, o porque puedo tener una versión html con elementos interactivos. Las versiones vendrían primero que los idiomas, ya que con las versiones puedo hacer lo de los idiomas.
-    
+
     Tener un parámetro ver_append que haga que las versiones posteriores incluyan las anteriores. Así me evito tener que estar escribiendo más y más versiones las funciones que aplican a más de una versión.
-    
+
      En los parámetros para las versiones me gustaría incluir nombres para las versiones más que verdadero o falso.
-    
+
     A la cr_knit function le pueda pasar un argumento correspondiente al nombre de salida del documento.
-    
+
     cr_switch un valor específico para cada formato(lan/ver). Esto más para el yaml, para el contenido mejor utilizar el argumento cr_only -->
 6.  Ability of insert R code into cr\_content function
-    <!-- usar |&mean(df$x)| para insertar código a ser evaluado. o yo puedo hacer que internamente una funcion como cr_RCode(mean(df$x)) se traduzca en |&mean(df$x)| para luego operar sobre ello.-->
+    <!-- usar |&mean(df$x)| para insertar código a ser evaluado. o yo puedo hacer que internamente una funcion como cr_RCode(mean(df$x)) se traduzca en |&mean(df$x)| para luego operar sobre ello.
+    con glue:glue() puedo hacer esto-->
 7.  Ability of dinamically evaluate the chucks in conjunction with
     crender
     <!-- Crear una función cr_eval() para evaluar el código R condicionalmente, y así nisiquiera evaluo el código cuando este no va a ser insertado en documento actual. Esto es algo similar a como funciona tryCatch incluso puede ser de este tipo que todo el código vaya dentro de ella o puedo hacer que funciones con %>% o mejor aún de ambas formas. En verdad resulta igual de peligroso que el argumento eval del chuck a menos que logre hacer algun tipo de dependencia que haga que el código se evalue solo si es necesario en cualquier parte del documento. -->

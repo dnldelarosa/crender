@@ -16,10 +16,10 @@ knitr::opts_chunk$set(
 # crender: *C*onditional *render*ing for Rmarkdown <img src="man/figures/logo.png" align="right" width=120 height=139 alt="" />
 
 <!-- badges: start -->
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![R build status](https://github.com/drdsdaniel/crender/workflows/R-CMD-check/badge.svg)](https://github.com/drdsdaniel/crender/actions)
-[![Travis build status](https://travis-ci.com/drdsdaniel/crender.svg?branch=master)](https://travis-ci.com/drdsdaniel/crender)
-[![Codecov test coverage](https://codecov.io/gh/drdsdaniel/crender/branch/master/graph/badge.svg)](https://codecov.io/gh/drdsdaniel/crender?branch=master)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Codecov test coverage](https://codecov.io/gh/drdsdaniel/crender/branch/main/graph/badge.svg)](https://codecov.io/gh/drdsdaniel/crender?branch=main)
 [![CRAN status](https://www.r-pkg.org/badges/version/crender)](https://CRAN.R-project.org/package=crender)
 <!-- badges: end -->
 
@@ -46,12 +46,12 @@ You can install the development version from GitHub with:
 
 ``` r
 tryCatch(
-  library(devtools),
+  library(remotes),
   error = function(e){
-    install.packages('devtools')
+    install.packages('remotes')
   }
 )
-devtools::install_github("drdsdaniel/crender")
+remotes::install_github("drdsdaniel/crender")
 ```
 
 ## Roadmap
@@ -78,7 +78,8 @@ A la cr_knit function le pueda pasar un argumento correspondiente al nombre de s
 
 cr_switch un valor específico para cada formato(lan/ver). Esto más para el yaml, para el contenido mejor utilizar el argumento cr_only -->
 6. Ability of insert R code into cr_content function
-<!-- usar |&mean(df$x)| para insertar código a ser evaluado. o yo puedo hacer que internamente una funcion como cr_RCode(mean(df$x)) se traduzca en |&mean(df$x)| para luego operar sobre ello.-->
+<!-- usar |&mean(df$x)| para insertar código a ser evaluado. o yo puedo hacer que internamente una funcion como cr_RCode(mean(df$x)) se traduzca en |&mean(df$x)| para luego operar sobre ello.
+con glue:glue() puedo hacer esto-->
 7. Ability of dinamically evaluate the chucks in conjunction with crender
 <!-- Crear una función cr_eval() para evaluar el código R condicionalmente, y así nisiquiera evaluo el código cuando este no va a ser insertado en documento actual. Esto es algo similar a como funciona tryCatch incluso puede ser de este tipo que todo el código vaya dentro de ella o puedo hacer que funciones con %>% o mejor aún de ambas formas. En verdad resulta igual de peligroso que el argumento eval del chuck a menos que logre hacer algun tipo de dependencia que haga que el código se evalue solo si es necesario en cualquier parte del documento. -->
 
