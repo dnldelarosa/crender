@@ -24,10 +24,10 @@ cr_format <- function(params = NULL){
             }
           }
         }
-        return(knitr::opts_knit$get("rmarkdown.pandoc.to")[[1]])
       }, error = function(e){
 
       })
     }
   }
+  return(knitr::opts_knit$get("rmarkdown.pandoc.to")[[1]])
 }
