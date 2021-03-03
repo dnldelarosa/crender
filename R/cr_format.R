@@ -25,7 +25,7 @@ cr_format <- function(params = NULL){
           }
         }
       }, error = function(e){
-
+        return(knitr::opts_knit$get("rmarkdown.pandoc.to")[[1]])
       })
     }
   }
