@@ -4,7 +4,10 @@
 \alias{cr_format}
 \title{Current knitting format}
 \usage{
-cr_format()
+cr_format(params = NULL)
+}
+\arguments{
+\item{params}{\link{list}: taken from rmarkdown environment}
 }
 \value{
 character Return de current knitting format. \code{html} if interactive.

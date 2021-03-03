@@ -12,7 +12,7 @@
 #' cr_only(only)
 #' }
 cr_only <- function(only) {
-  if(cr_format() %in% only){
+  if(cr_format(params) %in% only){
     TRUE
   } else {
     FALSE

@@ -20,7 +20,7 @@
 #' cr_val(cr_dbl='latex')
 #' }
 cr_val <- function(only = NULL, cr2 = NULL){
-  if(is.null(params[[cr_format()]])){
+  if(is.null(params[[cr_format(params)]])){
     TRUE
   } else {
     if(!is.null(only)){
@@ -28,7 +28,7 @@ cr_val <- function(only = NULL, cr2 = NULL){
     } else if(!is.null(cr2)){
       cr_cr2(cr2)
     } else {
-      params[[cr_format()]]
+      params[[cr_format(params)]]
     }
   }
 }
