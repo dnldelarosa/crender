@@ -6,6 +6,8 @@
 #'
 #' @return logical the opposite value of primary result for the given format
 #'
+#' @keywords internal
+#'
 #' @examples
 #' \dontrun{
 #' cr_cr2(cr2)

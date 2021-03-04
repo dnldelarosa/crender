@@ -5,6 +5,9 @@
 #' @param params [list]: taken from rmarkdown environment
 #'
 #' @return character Return de current knitting format. \code{html} if interactive.
+#'
+#' @keywords internal
+#'
 cr_format <- function(params = NULL){
   if(is.null(knitr::opts_knit$get("rmarkdown.pandoc.to")[[1]])){
     return('html')

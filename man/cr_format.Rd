@@ -15,3 +15,4 @@ character Return de current knitting format. \code{html} if interactive.
 \description{
 \lifecycle{experimental}
 }
+\keyword{internal}

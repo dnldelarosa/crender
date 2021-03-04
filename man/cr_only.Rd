@@ -21,3 +21,4 @@ logical TRUE if current format in given vector, FALSE otherwise.
 cr_only(only)
 }
 }
+\keyword{internal}

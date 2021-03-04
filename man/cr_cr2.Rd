@@ -20,3 +20,4 @@ logical the opposite value of primary result for the given format
 cr_cr2(cr2)
 }
 }
+\keyword{internal}

@@ -7,6 +7,8 @@
 #'
 #' @return logical TRUE if current format in given vector, FALSE otherwise.
 #'
+#' @keywords internal
+#'
 #' @examples
 #' \dontrun{
 #' cr_only(only)
