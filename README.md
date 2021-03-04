@@ -25,11 +25,12 @@ The main objective of **crender** can be summarized as:
 1.  Ability to **conditional**ly insert **content** into an RMarkdown
     document. See [Functions reference pages](./reference/index.html)
 2.  Ability to generate documents (in different **Formats**) with
-    different content from the same RMarkdown document. See [Multiple
-    formats - vignette](./articles/multiple-formats.html)
+    different content from the same RMarkdown document. See [Get started
+    section](https://drdsdaniel.github.io/crender/articles/crender.html)
 3.  Ability to generate documents (in different **Versions**, same
     format) with different content from the same RMarkdown document. See
-    [Multiple versions - vignette](./articles/multiple-formats.html)
+    [Multiple versions -
+    vignette](https://drdsdaniel.github.io/crender/articles/multiple-versions.html)
 
 ## Installation
 
@@ -105,3 +106,24 @@ Please note that the `crender` project is released with a [Contributor
 Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
+
+<hr/>
+<!--html_preserve-->
+
+<a href="https://drdsdaniel.github.io/crender/articles/crender.html"><button type="button"
+style = "
+    border: 1px solid transparent;
+    background-color: #00a65a;
+    display: block;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 10px;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;"> Get
+started</button></a><!--/html_preserve-->

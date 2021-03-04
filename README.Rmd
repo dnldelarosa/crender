@@ -29,8 +29,8 @@ knitr::opts_chunk$set(
 The main objective of __crender__ can be summarized as:
 
 1. Ability to **conditional**ly insert __content__ into an RMarkdown document. See [Functions reference pages](./reference/index.html)
-2. Ability to generate documents (in different __Formats__) with different content from the same RMarkdown document. See [Multiple formats - vignette](./articles/multiple-formats.html)
-3. Ability to generate documents (in different __Versions__, same format) with different content from the same RMarkdown document. See [Multiple versions - vignette](./articles/multiple-formats.html)
+2. Ability to generate documents (in different __Formats__) with different content from the same RMarkdown document. See [Get started section](https://drdsdaniel.github.io/crender/articles/crender.html)
+3. Ability to generate documents (in different __Versions__, same format) with different content from the same RMarkdown document. See [Multiple versions - vignette](https://drdsdaniel.github.io/crender/articles/multiple-versions.html)
 
 
 ## Installation
@@ -90,3 +90,9 @@ Have a feedback or want to contribute?
 Please take a look at the [contributing guidelines](https://drdsdaniel.github.io/crender/CONTRIBUTING.html) before filing an issue or pull request.
 
 Please note that the `crender` project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+<hr/>
+
+```{r echo=FALSE}
+Dmisc::big_button("Get started", "https://drdsdaniel.github.io/crender/articles/crender.html")
+```
