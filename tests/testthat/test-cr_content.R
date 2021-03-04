@@ -1,6 +1,9 @@
 test_that("cr_content test", {
   assign('params', list('html' = TRUE), envir = globalenv())
-  expect_equal(cr_content('Daniel'), 'Daniel')
-  expect_null(cr_content('Daniel', only = 'latex'))
-  expect_null(cr_content('Daniel', cr2 = 'html'))
+  assign('a', "aaaaaaaaaaaaaaaaa", envir = globalenv())
+  expect_equal(cr_content('Texto a incluir'), 'Texto a incluir')
+  expect_null(cr_content('Texto a incluir', only = 'latex'))
+  expect_null(cr_content('Texto a incluir', cr2 = 'html'))
+  expect_equal(cr_content('{a}'), "aaaaaaaaaaaaaaaaa")
+  expect_equal(cr_content('a'), "a")
 })

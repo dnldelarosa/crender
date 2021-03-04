@@ -1,6 +1,6 @@
 Package: crender
 Title: Conditional rendering for Rmarkdown
-Version: 0.7.0.9001
+Version: 0.7.1.9000
 Authors@R: 
     person(given = "Daniel E.",
            family = "de la Rosa",
@@ -15,7 +15,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
     knitr,
-    lifecycle
+    lifecycle,
+    glue
 Suggests: 
     testthat,
     withr,

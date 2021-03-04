@@ -20,6 +20,6 @@
 #' }
 cr_content <- function(content, only = NULL, cr2 = NULL){
   if(cr_val(only = only, cr2 = cr2)){
-    paste0(content)
+    glue::glue(content)
   }
 }
