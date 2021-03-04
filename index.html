@@ -45,7 +45,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">crender</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.7.2.9000</span>
       </span>
     </div>
 
@@ -58,22 +58,10 @@
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="articles/crender.html">Get started</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/multiple-formats.html">Multiple formats</a>
-    </li>
-    <li>
-      <a href="articles/multiple-versions.html">Multiple versions</a>
-    </li>
-  </ul>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -104,9 +92,9 @@
 <ol>
 <li>Ability to <strong>conditional</strong>ly insert <strong>content</strong> into an RMarkdown document. See <a href="./reference/index.html">Functions reference pages</a>
 </li>
-<li>Ability to generate documents (in different <strong>Formats</strong>) with different content from the same RMarkdown document. See <a href="./articles/multiple-formats.html">Multiple formats - vignette</a>
+<li>Ability to generate documents (in different <strong>Formats</strong>) with different content from the same RMarkdown document. See <a href="https://drdsdaniel.github.io/crender/articles/crender.html">Get started section</a>
 </li>
-<li>Ability to generate documents (in different <strong>Versions</strong>, same format) with different content from the same RMarkdown document. See <a href="./articles/multiple-formats.html">Multiple versions - vignette</a>
+<li>Ability to generate documents (in different <strong>Versions</strong>, same format) with different content from the same RMarkdown document. See <a href="https://drdsdaniel.github.io/crender/articles/multiple-versions.html">Multiple versions - vignette</a>
 </li>
 </ol>
 </div>
@@ -136,7 +124,6 @@
 <li><p>Add a function to insert conditional elements in the yaml <!-- Desarrollar esta función: author: "r crender::cr_toggle('Daniel E. de la Rosa', 'crender core team', only = NULL, cr_dbl = NULL)" --></p></li>
 <li><p>A function to insert tables in especific formats <!-- Falta la función cr_table --></p></li>
 <li><p>A knit function to control additional output aspects</p></li>
-<li><p>Vignettes for explain package usage <!-- La viñeta crender explica la mayoría de las funcionalidades con multiples formatos, referencia la viñeta de multiples versiones tanto como tal, como la opción de multilingual output. Una viñeta para las versiones con el mismo formato y en una seccón de esta sugerir la posibilidad de generar documento multilingue --></p></li>
 <li><p>Ability of generate multiple version with the same output format <!-- Si de verdad puedo poner múltiples rmarkdown::render dentro de la function knit, cual es el plan para rmd.polyglot, entonces tambien puedo hacer que crender cree distintas versiones de un mismo documento. Utilizando ver1...vern en lugar de lang1...langn. La idea básicamente es que pongo tantos lang(ver) en los párametros como idiomas(versiones) del mismo documento quiero. Entonces mientras pueda hacer que la funcion knit ejecute rmarkdown::render tantas veces como estos parámetros haya, intercalandolos 1 a 1, entonces puedo manipular los cr_val, incluso puedo combinar esto con los formatos de documentos, es decir que puedo tener distintas versiones en varios formatos con algunas diferencias en cada uno. En fin, los formatos tienen sentido porque puedo hacer una presentación por ejemplo al mismo tiempo, o porque puedo tener una versión html con elementos interactivos. Las versiones vendrían primero que los idiomas, ya que con las versiones puedo hacer lo de los idiomas.
 
     Tener un parámetro ver_append que haga que las versiones posteriores incluyan las anteriores. Así me evito tener que estar escribiendo más y más versiones las funciones que aplican a más de una versión.
@@ -156,6 +143,22 @@
 <p>Have a feedback or want to contribute?</p>
 <p>Please take a look at the <a href="https://drdsdaniel.github.io/crender/CONTRIBUTING.html">contributing guidelines</a> before filing an issue or pull request.</p>
 <p>Please note that the <code>crender</code> project is released with a <a href="https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<hr>
+<!--html_preserve--><p><a href="https://drdsdaniel.github.io/crender/articles/crender.html"><button type="button" style="
+    border: 1px solid transparent;
+    background-color: #00a65a;
+    display: block;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 35%;
+    margin-top: 10px;
+    font-weight: 900;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;"> Get started</button></a><!--/html_preserve--></p>
 </div>
 </div>
   </div>
