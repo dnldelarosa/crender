@@ -1,0 +1,157 @@
+---
+title: "crender: *C*onditional *render*ing for Rmarkdown"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{crender: *C*onditional *render*ing for Rmarkdown}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+One of the main uses of `crender` is to generate multiple documents with different content from the same RMarkdown.
+
+The easiest way to start with `crender` is by installing the [Rmdx](https://github.com/drdsdaniel/Rmdx) package where you will find a preconfigured template with the necessary settings to use `crender`, and basic explanations of how continue.
+
+However, this is not the only way to use `crender` and below we also show instructions on how to start and get the most out of `crender`.
+
+First you must specify the desired formats in the __output__ argument in the yaml of your RMarkdown document. For this it is important that you take into account the considerations made in the section of [Supported formats](#supported-formats).
+
+```yaml
+---
+title: "Template Title"
+author: "Daniel E. de la Rosa"
+date: "`r Sys.Date()`"
+output: 
+  ioslides_presentation: default
+  Rmdx::rmdx_pdf: default
+  Rmdx::rmdx_html:
+    footer_name: 'Daniel E. de la Rosa'
+params:
+  html: yes
+  ioslides: no
+  latex: no
+---
+```
+
+Likewise, in the parameters (__params__) you must specify __keywords__ as formats, with their respective truth value. Where:
+
+* __TRUE, true, yes__: indicates if the content should be inserted by default in the document in question.
+* __FALSE, false, no__: indicates whether the content _not_ should be inserted by default in the document in question.
+
+Once this is done, you just have to load the `crender` library and start using it. In this sense, the [cr_val ()](https://drdsdaniel.github.io/crender/reference/cr_val.html) function will be very useful.
+
+``` r
+library(crender)
+knitr::opts_chunk$set(echo = cr_val(), include = cr_val(), comment = "")
+```
+
+With the above instructions, `crender` is telling knitr that the code chunks and their results will only be inserted in the formats specified as _yes_ in the __params__.
+
+To insert non-code content, such as plain text or markdown, you can use the [cr_content ()](https://drdsdaniel.github.io/crender/reference/cr_content.html) function, where you can also insert simple R code evaluations. For the latter, the R code must be surrounded by curly braces, Ex: {sum (1: 4)} or {mean(cars$dist)}.
+
+The __double conditional__ or __cr2__ is an argument present in the `crender` functions with which the default result for a specific format can be negated, in a specific code evaluation. Resulting in the possibility of inserting content that in principle was not supposed to be included in said format. You can double condition as many formats as you want.
+
+The __exclusive content__ or __only__ is an argument present in the `crender` functions with which, in a specific code evaluation, the value is made __false__ for all formats except the one specified in the argument. With this you can include content in a specific format regardless of its initial configuration.
+
+Take a look at [this document](https://github.com/drdsdaniel/Rmdx/blob/main/inst/rmarkdown/templates/rmdx_crender/skeleton/skeleton.Rmd) for specific examples of how to use these functions.
+
+## crender in action
+
+> Make sure you have __crender__ installed.
+
+If you don't have the [Rmdx](https://github.com/drdsdaniel/Rmdx) library installed, download the two files available at [this address](https://github.com/drdsdaniel/Rmdx/tree/main/inst/rmarkdown/templates/rmdx_crender/skeleton), and replace the yaml with this:
+
+```yaml
+---
+title: "Template Title"
+author: "Daniel E. de la Rosa"
+date: "marzo 04, 2021"
+output: 
+  ioslides_presentation: default
+  pdf_document: default
+  html_document: default
+params:
+  html: yes
+  ioslides: no
+  latex: no
+---
+```
+
+If you install [Rmdx](https://github.com/drdsdaniel/Rmdx) just create a new Rmarkdown document from the __Rmdx crender__ template.
+
+Read the contents of the .Rmd file and knit it for each of the specified formats. Then compare the content of this with the results of each knit.
+
+The file generates three different documents:
+
+* An __html__ with interactive content and so on.
+* A __pdf (latex) __ with more summarized and formal content.
+* A presentation in __ioslides__ with fairly summarized information for presentation purposes.
+
+Each of these documents has its own structure but they share some elements, such as the fact that the processing occurs only once and is shared among all, which means that if you make a change in any calculation or formula, you will see reflected in all related documents immediately.
+
+## Supported formats
+
+Below is a table showing the RMarkdown package formats supported by `crender`.
+
+<table>
+<thead>
+  <tr>
+    <th>Package</th><th>Function</th><th>Keyword</th><th>Format</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="13">Rmarkdown</td><td>html_document</td><td rowspan="2">html</td><td rowspan="4">html</td>
+  </tr>
+  <tr>
+                                   <td>html_notebook</td>
+  </tr>
+  <tr>
+                                   <td>slidy_presentation</td><td>slidy</td>
+  </tr>
+  <tr>
+                                   <td>ioslides_presentation</td><td>ioslides</td>
+  </tr>
+  <tr>
+                                   <td>word_document</td><td>docx</td><td>docx</td>
+  </tr>
+  <tr>
+                                   <td>latex_document</td><td rowspan="2">latex</td><td>tex</td>
+  </tr>
+  <tr>
+                                   <td>pdf_document</td><td rowspan="2">pdf</td>
+  </tr>
+  <tr>
+                                   <td>beamer_presentation</td><td>beamer</td>
+  </tr>
+  <tr>
+                                   <td>github_document</td><td>github</td><td rowspan="2">md</td>
+  </tr>
+  <tr>
+                                   <td>md_document</td><td>markdown_strict</td>
+  </tr>
+  <tr>
+                                   <td>odt_document</td><td>odt</td><td>odt</td>
+  </tr>
+  <tr>
+                                   <td>powerpoint_presentation</td><td>pptx</td><td>pptx</td>
+  </tr>
+  <tr>
+                                   <td>rtf_document</td><td>rtf</td><td>rtf</td>
+  </tr>
+</tbody>
+</table>
+
+* Note that the functions shared by the same __keyword__ cannot be differentiated in `render`, so it is not recommended to work with several of them at the same time, or the results may differ from what is expected.
+
+* Likewise, you must take into account that the functions that share the same format are going to overwrite each other. That is, although they can be used together, it is important to rename the output before knitr another of the functions that share format.
+
+In theory, `crender` can be used with any RMarkdown format. To do this, along with the previous observations, it must be taken into account that the __keyword__ used must coincide with one of the formats supported by [pandoc](https://pandoc.org/MANUAL.html) or be identifiable in the path of the template used.
+
+In this sense, any of the formats provided in the package [xaringan](https://github.com/yihui/xaringan), for example, could be used with the keyword __xaringan__, although obviously we would consider that the output format is __.html__ so the previous observation in this regard should be taken into account.
