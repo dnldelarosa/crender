@@ -25,6 +25,6 @@ Otherwise return a logical value based on given function params.
 \dontrun{
 cr_val()
 cr_val(only='html')
-cr_val(cr_dbl='latex')
+cr_val(cr2='latex')
 }
 }

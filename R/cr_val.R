@@ -17,7 +17,7 @@
 #' \dontrun{
 #' cr_val()
 #' cr_val(only='html')
-#' cr_val(cr_dbl='latex')
+#' cr_val(cr2='latex')
 #' }
 cr_val <- function(only = NULL, cr2 = NULL){
   if(is.null(params[[cr_format(params)]])){
